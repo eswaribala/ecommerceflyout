@@ -8,23 +8,24 @@
         <vm:ProgramFeaturesViewModel/>
     </ContentPage.BindingContext>
     <ContentPage.Content>
-        <ListView x:Name="UsersList"  RowHeight="260" VerticalScrollBarVisibility="Always">
+        <ListView x:Name="UsersList"  RowHeight="260" VerticalScrollBarVisibility="Always" 
+                  SeparatorColor="DarkBlue">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>
                         <StackLayout>
-                            <Label Text="{Binding Id}"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
                             <Label Text="{Binding Name}"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-                            <Label Text="{Binding Email}"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-                            <Label Text="{Binding Address.City}"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+                VerticalOptions="StartAndExpand" 
+                HorizontalOptions="StartAndExpand" TextColor="Navy" />
+                            <Label Text="{Binding Location}"
+                VerticalOptions="StartAndExpand"  TextColor="Navy"
+                HorizontalOptions="StartAndExpand" />
+                            <Label Text="{Binding Details}"
+                VerticalOptions="StartAndExpand" TextColor="Navy"
+                HorizontalOptions="StartAndExpand" />
+                            <Image Source="{Binding ImageUrl}"
+                VerticalOptions="StartAndExpand" 
+                HorizontalOptions="StartAndExpand" />
                         </StackLayout>
                     </ViewCell>
                 </DataTemplate>

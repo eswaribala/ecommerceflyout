@@ -30,10 +30,7 @@ namespace ecommerceflyout.Services
            
             try
             {
-              //  var input = Android.App.Application.Context.Assets.Open("users.json");
-              //  StreamReader sr = new StreamReader(input);
-             //   var userContent = sr.ReadToEnd();
-              //  Console.WriteLine(userContent);
+               
                 var response = await httpClient.GetAsync(uri);
 
                 var content = await response.Content.ReadAsStringAsync();
