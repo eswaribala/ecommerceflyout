@@ -22,7 +22,7 @@ namespace ecommerceflyout.Views
             InitializeComponent();
             //  LoadData();
             //CreateMonkeyCollection();
-            UsersList.ItemsSource = CreateMonkeyCollection();
+            MonkeysList.ItemsSource = CreateMonkeyCollection();
         }
 
 
