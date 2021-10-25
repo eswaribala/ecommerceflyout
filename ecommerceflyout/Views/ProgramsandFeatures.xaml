@@ -9,8 +9,8 @@
     </ContentPage.BindingContext>
     <ContentPage.Content>
 
-        <CollectionView x:Name="MonkeysList">
-            <CollectionView.ItemTemplate>
+        <CollectionView x:Name="MonkeysList"  SelectionChanged="MonkeysList_SelectionChanged" SelectionMode="Single">
+            <CollectionView.ItemTemplate >
                 <DataTemplate>
                     <Grid>
                         <Grid.RowDefinitions>
@@ -21,26 +21,27 @@
                             <ColumnDefinition Width="*"></ColumnDefinition>
                             <ColumnDefinition Width="*"></ColumnDefinition>
                         </Grid.ColumnDefinitions>
+                        <Image Source="{Binding ImageUrl}" WidthRequest="50" HeightRequest="50"
+                VerticalOptions="CenterAndExpand" Grid.Row="0" Grid.Column="0"
+                HorizontalOptions="CenterAndExpand" />
                         <Label Text="{Binding Name}"
-                VerticalOptions="StartAndExpand" Grid.Row="0" Grid.Column="0"
+                VerticalOptions="StartAndExpand" Grid.Row="1" Grid.Column="0"
                 HorizontalOptions="StartAndExpand" TextColor="Navy" />
-                        <Label Text="{Binding Location}" Grid.Row="0" Grid.Column="1"
+                        <Label Text="{Binding Location}" Grid.Row="1" Grid.Column="1"
                 VerticalOptions="StartAndExpand"  TextColor="Navy"
                 HorizontalOptions="StartAndExpand" />
-                        <Label Text="{Binding Details}" Grid.Row="1" Grid.Column="0"
+                        <Label Text="{Binding Details}" Grid.Row="2" Grid.Column="0"
                 VerticalOptions="StartAndExpand" TextColor="Navy"
                 HorizontalOptions="StartAndExpand" />
-                        <Image Source="{Binding ImageUrl}" WidthRequest="50" HeightRequest="50"
-                VerticalOptions="StartAndExpand" Grid.Row="1" Grid.Column="1"
-                HorizontalOptions="StartAndExpand" />
+                        
 
                     </Grid>
                 </DataTemplate>
             </CollectionView.ItemTemplate>
         </CollectionView>
-        
-        <!--<ListView x:Name="UsersList"  RowHeight="260" VerticalScrollBarVisibility="Always" 
-                  SeparatorColor="DarkBlue">
+        <!--
+        <ListView x:Name="MonkeysList"  RowHeight="260" VerticalScrollBarVisibility="Always" 
+                  SeparatorColor="DarkBlue" ItemSelected="MonkeysList_ItemSelected">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>
@@ -63,7 +64,7 @@
             </ListView.ItemTemplate>
             
         </ListView>
-        -->
+       -->
         
     </ContentPage.Content>
 </ContentPage>

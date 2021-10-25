@@ -175,5 +175,17 @@ namespace ecommerceflyout.Views
             });
             return Monkeys;
         }
+
+        private void MonkeysList_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            //work around
+            DisplayAlert("Animal Selection", (e.CurrentSelection.FirstOrDefault() as Monkey).Name, "Dismiss");
+        }
+
+
+        //private void MonkeysList_ItemSelected(object sender, SelectedItemChangedEventArgs e)
+        //{
+        //    DisplayAlert("Animal Selection", ((Monkey)e.SelectedItem).Name, "Dismiss");
+        //}
     }
 }
