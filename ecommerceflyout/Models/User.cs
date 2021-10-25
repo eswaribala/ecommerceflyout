@@ -14,8 +14,8 @@ namespace ecommerceflyout.Models
 
         public string Phone { get; set; }
         public string WebSite { get; set; }
-        public Address _Address { get; set; }
-        public Company _Company { get; set; }
+        public Address Address { get; set; }
+        public Company Company { get; set; }
 
 
     }

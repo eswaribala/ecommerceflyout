@@ -4,6 +4,7 @@ using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.IO;
 using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
@@ -18,6 +19,7 @@ namespace ecommerceflyout.Services
         public APIService()
         {
             this.httpClient = new HttpClient();
+           
         }
 
         public async Task<ObservableCollection<User>> RefreshAsyncData()
@@ -25,8 +27,13 @@ namespace ecommerceflyout.Services
             WebAPIUrl = "https://jsonplaceholder.typicode.com/users"; // Set your REST API url here
             var uri = new Uri(WebAPIUrl);
             Users = new ObservableCollection<User>();
+           
             try
             {
+              //  var input = Android.App.Application.Context.Assets.Open("users.json");
+              //  StreamReader sr = new StreamReader(input);
+             //   var userContent = sr.ReadToEnd();
+              //  Console.WriteLine(userContent);
                 var response = await httpClient.GetAsync(uri);
 
                 var content = await response.Content.ReadAsStringAsync();
