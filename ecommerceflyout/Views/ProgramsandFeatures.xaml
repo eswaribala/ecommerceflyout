@@ -40,12 +40,24 @@
             </CollectionView.ItemTemplate>
         </CollectionView>-->
         <StackLayout>
-            <SearchBar x:Name="AnimalSearch" SearchButtonPressed="AnimalSearch_SearchButtonPressed"></SearchBar>
+            <SearchBar x:Name="AnimalSearch" 
+                       SearchButtonPressed="AnimalSearch_SearchButtonPressed" TextChanged="AnimalSearch_TextChanged">
+                
+            </SearchBar>
         <ListView x:Name="MonkeysList"   VerticalScrollBarVisibility="Always" 
-                  SeparatorColor="DarkBlue" ItemSelected="MonkeysList_ItemSelected">
+             IsPullToRefreshEnabled="True"    SeparatorColor="DarkBlue" ItemSelected="MonkeysList_ItemSelected">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>
+                            <ViewCell.ContextActions>
+                                <MenuItem Text="Edit" Clicked="Edit_Clicked" 
+                                          CommandParameter="{Binding .}">
+                                    
+                                </MenuItem>
+                                <MenuItem Text="Delete"  CommandParameter="{Binding .}"
+                                          Clicked="Delete_Clicked"></MenuItem>
+                            </ViewCell.ContextActions>
+                        
                         <StackLayout>
                             <Label Text="{Binding Name}"
                 VerticalOptions="StartAndExpand" 

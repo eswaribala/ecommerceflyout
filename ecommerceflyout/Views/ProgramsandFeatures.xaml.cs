@@ -24,6 +24,12 @@ namespace ecommerceflyout.Views
             //CreateMonkeyCollection();
             Monkeys= CreateMonkeyCollection();
             MonkeysList.ItemsSource = Monkeys;
+
+            MonkeysList.RefreshCommand = new Command(() =>
+              {
+                  RefreshData();
+                  MonkeysList.IsRefreshing = false;
+              });
         }
 
 
@@ -197,6 +203,47 @@ namespace ecommerceflyout.Views
             {
                 MonkeysList.ItemsSource = Monkeys.Where(obj => obj.Name.ToLower().
                  StartsWith(SearchText.ToLower()));
+            }
+            
+        }
+
+        private void RefreshData()
+        {
+            MonkeysList.ItemsSource = Monkeys;
+        }
+
+        private void AnimalSearch_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            MonkeysList.ItemsSource = Monkeys;
+        }
+
+        private void Edit_Clicked(object sender, EventArgs e)
+        {
+            var EditData = sender as MenuItem;
+            if (EditData != null)
+            {
+                DisplayAlert("Edit Row", (EditData.CommandParameter as Monkey).Name,
+                    "Dismiss");
+            }
+
+        }
+
+        private void Delete_Clicked(object sender, EventArgs e)
+        {
+            var DeleteData = sender as MenuItem;
+            if (DeleteData != null)
+            {
+                DisplayAlert("Delete Row", (DeleteData.CommandParameter as Monkey).Name, "Dismiss");
+
+                Monkey MonkeyObj = (DeleteData.CommandParameter as Monkey);
+               var query = from monkey in Monkeys where monkey.Name != MonkeyObj.Name select monkey;
+                IList<Monkey> FilteredMonkeys=query.ToList();
+               
+                    MonkeysList.ItemsSource = FilteredMonkeys;
+                
+                
+
+
             }
         }
     }
