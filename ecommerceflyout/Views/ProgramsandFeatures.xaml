@@ -9,7 +9,7 @@
     </ContentPage.BindingContext>
     <ContentPage.Content>
 
-        <CollectionView x:Name="MonkeysList"  SelectionChanged="MonkeysList_SelectionChanged" SelectionMode="Single">
+        <!--<CollectionView x:Name="MonkeysList"  SelectionChanged="MonkeysList_SelectionChanged" SelectionMode="Single">
             <CollectionView.ItemTemplate >
                 <DataTemplate>
                     <Grid>
@@ -38,9 +38,10 @@
                     </Grid>
                 </DataTemplate>
             </CollectionView.ItemTemplate>
-        </CollectionView>
-        <!--
-        <ListView x:Name="MonkeysList"  RowHeight="260" VerticalScrollBarVisibility="Always" 
+        </CollectionView>-->
+        <StackLayout>
+            <SearchBar x:Name="AnimalSearch" SearchButtonPressed="AnimalSearch_SearchButtonPressed"></SearchBar>
+        <ListView x:Name="MonkeysList"   VerticalScrollBarVisibility="Always" 
                   SeparatorColor="DarkBlue" ItemSelected="MonkeysList_ItemSelected">
             <ListView.ItemTemplate>
                 <DataTemplate>
@@ -49,7 +50,7 @@
                             <Label Text="{Binding Name}"
                 VerticalOptions="StartAndExpand" 
                 HorizontalOptions="StartAndExpand" TextColor="Navy" />
-                            <Label Text="{Binding Location}"
+                            <!--<Label Text="{Binding Location}"
                 VerticalOptions="StartAndExpand"  TextColor="Navy"
                 HorizontalOptions="StartAndExpand" />
                             <Label Text="{Binding Details}"
@@ -57,14 +58,14 @@
                 HorizontalOptions="StartAndExpand" />
                             <Image Source="{Binding ImageUrl}" WidthRequest="50" HeightRequest="50"
                 VerticalOptions="StartAndExpand" 
-                HorizontalOptions="StartAndExpand" />
+                HorizontalOptions="StartAndExpand" />-->
                         </StackLayout>
                     </ViewCell>
                 </DataTemplate>
             </ListView.ItemTemplate>
             
         </ListView>
-       -->
-        
+        </StackLayout>
+
     </ContentPage.Content>
 </ContentPage>
