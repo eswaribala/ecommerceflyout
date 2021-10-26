@@ -207,15 +207,22 @@ namespace ecommerceflyout.Views
             String SearchText = AnimalSearch.Text;
             if (SearchText.Length > 0)
             {
-                MonkeysList.ItemsSource = Monkeys.Where(obj => obj.Name.ToLower().
-                 StartsWith(SearchText.ToLower()));
+
+                // MonkeysList.ItemsSource = GroupedData.Where(obj => obj..Contains(SearchText)).ToList();
+
+                // StartsWith(SearchText.ToLower()));
+                MonkeysList.ItemsSource =GroupedData.Where(p => p.Key == SearchText)
+         .ToDictionary(p => p.Key, p => p);
+
+             //   MonkeysList.ItemsSource = Monkeys.Where(obj => obj.Name.ToLower().
+               //  StartsWith(SearchText.ToLower()));
             }
             
         }
 
         private void RefreshData()
         {
-            MonkeysList.ItemsSource = Monkeys;
+            MonkeysList.ItemsSource = GroupedData;
         }
 
         private void AnimalSearch_TextChanged(object sender, TextChangedEventArgs e)
