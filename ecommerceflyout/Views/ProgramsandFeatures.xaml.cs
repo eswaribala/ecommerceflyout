@@ -1,5 +1,6 @@
 ﻿using ecommerceflyout.Models;
 using ecommerceflyout.Services;
+using ecommerceflyout.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -16,6 +17,8 @@ namespace ecommerceflyout.Views
     public partial class ProgramsandFeatures : ContentPage
     {
         private ObservableCollection<User> Users;
+
+        public List<ObservableGroupCollection<String, Monkey>> GroupedData;
         public IList<Monkey> Monkeys { get; private set; }
         public ProgramsandFeatures()
         {
@@ -23,7 +26,10 @@ namespace ecommerceflyout.Views
             //  LoadData();
             //CreateMonkeyCollection();
             Monkeys= CreateMonkeyCollection();
-            MonkeysList.ItemsSource = Monkeys;
+            GroupedData=Monkeys.OrderBy(obj=>obj.Name).GroupBy(p => p.Name[0].ToString())
+               .Select(p => new ObservableGroupCollection<string, Monkey>(p)).ToList();
+
+            MonkeysList.ItemsSource = GroupedData;
 
             MonkeysList.RefreshCommand = new Command(() =>
               {
@@ -236,9 +242,12 @@ namespace ecommerceflyout.Views
                 DisplayAlert("Delete Row", (DeleteData.CommandParameter as Monkey).Name, "Dismiss");
 
                 Monkey MonkeyObj = (DeleteData.CommandParameter as Monkey);
-               var query = from monkey in Monkeys where monkey.Name != MonkeyObj.Name select monkey;
-                IList<Monkey> FilteredMonkeys=query.ToList();
-               
+              // var query = from monkey in Monkeys where monkey.Name != MonkeyObj.Name select monkey;
+               // IList<Monkey> FilteredMonkeys=query.ToList();
+
+                IList<Monkey> FilteredMonkeys=Monkeys.Where(obj=>obj.Name.ToLower() 
+                !=MonkeyObj.Name.ToLower()).ToList();
+
                     MonkeysList.ItemsSource = FilteredMonkeys;
                 
                 

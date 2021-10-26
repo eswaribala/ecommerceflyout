@@ -45,7 +45,12 @@
                 
             </SearchBar>
         <ListView x:Name="MonkeysList"   VerticalScrollBarVisibility="Always" 
-             IsPullToRefreshEnabled="True"    SeparatorColor="DarkBlue" ItemSelected="MonkeysList_ItemSelected">
+             IsPullToRefreshEnabled="True"  
+                  IsGroupingEnabled="True"
+                   GroupDisplayBinding="{Binding Key}"  
+                  HasUnevenRows="True"
+                  
+                  SeparatorColor="DarkBlue" ItemSelected="MonkeysList_ItemSelected">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>
