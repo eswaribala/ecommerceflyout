@@ -58,6 +58,12 @@ namespace ecommerceflyout.ViewModels
             _SQLiteConnection= DependencyService.Get<ISQLiteConnectionHelper>().GetConnection();
 
             _SQLiteConnection.CreateTable<Member>();
+            if (!LoginValidation(Email, Password))
+            {
+                InValidLoginPrompt();
+            }
+            else
+                ValidLoginPrompt();
 
         }
 
