@@ -1,6 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <Application xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+               xmlns:magic = "clr-namespace:MagicGradients;assembly=MagicGradients"
              x:Class="ecommerceflyout.App">
     <!--
         Define global resources and styles here, that apply to all pages in your app.
@@ -27,6 +28,41 @@
                     </VisualStateGroupList>
                 </Setter>
             </Style>
+            <Style TargetType="Label">
+                <Setter Property="TextColor" Value="Navy"></Setter>
+                <Setter Property="FontSize" Value="Medium"></Setter>
+                <Setter Property="FontAttributes" Value="Bold"></Setter>
+                <Setter Property="VerticalTextAlignment" Value="Center"></Setter>
+            </Style>
+            <Style TargetType="Entry">
+                <Setter Property="TextColor" Value="Navy"></Setter>
+                <Setter Property="VerticalTextAlignment" Value="Center"></Setter>
+                <Setter Property="FontAttributes" Value="Bold"></Setter>
+            </Style>
+
+            <Style TargetType="ContentPage" ApplyToDerivedTypes="True">
+                <Setter Property="ControlTemplate">
+                    <Setter.Value>
+                        <ControlTemplate>
+                            <Grid>
+                                <magic:GradientView VerticalOptions="FillAndExpand">
+                                    <magic:GradientView.GradientSource>
+                                        <magic:LinearGradient Angle="45">
+                                            <magic:GradientStop Color="navy" Offset="0" />
+                                            <magic:GradientStop Color="CadetBlue" Offset="0.4" />
+                                            <magic:GradientStop Color="DeepSkyBlue" Offset="0.8" />
+                                            <magic:GradientStop Color="Blue" Offset="1" />
+                                        </magic:LinearGradient>
+                                    </magic:GradientView.GradientSource>
+                                </magic:GradientView>
+                                <ContentPresenter />
+
+                            </Grid>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+
         </ResourceDictionary>        
     </Application.Resources>
 </Application>

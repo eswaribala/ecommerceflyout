@@ -84,6 +84,9 @@
     <FlyoutItem Title="RPS Pay" Icon="icon_feed.png">
         <ShellContent Route="ItemsPage" ContentTemplate="{DataTemplate local:ItemsPage}" />
     </FlyoutItem>
+    <FlyoutItem Title="Registration" Icon="icon_feed.png">
+        <ShellContent Route="RegistrationPage" ContentTemplate="{DataTemplate local:RegistrationPage}" />
+    </FlyoutItem>
     <FlyoutItem Title="Programs and Features" Icon="icon_feed.png">
         <ShellContent Route="ProgramsandFeatures" ContentTemplate="{DataTemplate local:ProgramsandFeatures}" />
     </FlyoutItem>
