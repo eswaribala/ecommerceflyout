@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ecommerceflyout.Themes;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,6 +21,8 @@ namespace ecommerceflyout.Views
         public NetworkPage()
         {
             InitializeComponent();
+
+            themePicker.SelectedIndexChanged += ThemePicker_SelectedIndexChanged;
 
             CurrentAccess = Connectivity.NetworkAccess;
 
@@ -44,6 +47,11 @@ namespace ecommerceflyout.Views
                 NetworkTProfile.Text = "Network Profile is Ethernet";
             }
 
+        }
+
+        private void ThemePicker_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            ThemeManager.ChangeTheme(themePicker.SelectedItem.ToString());
         }
 
         private void Connectivity_ConnectivityChanged(object sender, ConnectivityChangedEventArgs e)
