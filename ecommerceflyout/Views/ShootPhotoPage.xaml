@@ -18,7 +18,7 @@
                 <ColumnDefinition Width="*"></ColumnDefinition>
             </Grid.ColumnDefinitions>
             <Button Text="Take Photo" Grid.Row="0" Grid.Column="0" Margin="10" Pressed="PhotoClick_Pressed"></Button>
-            <Image Source="network.png" Grid.Row="1" Grid.Column="0"></Image>
+            <Image x:Name="Frame" Source="network.png" Grid.Row="1" Grid.Column="0"></Image>
         </Grid>
     </ContentPage.Content>
 </ContentPage>

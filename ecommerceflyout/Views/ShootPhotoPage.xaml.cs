@@ -19,18 +19,21 @@ namespace ecommerceflyout.Views
             InitializeComponent();
         }
 
-        private void PhotoClick_Pressed(object sender, EventArgs e)
+        private async void PhotoClick_Pressed(object sender, EventArgs e)
         {
+             await Phototask();
+            Frame.Source = FullPath;
 
         }
 
 
-        private async void Phototask()
+        private async Task Phototask()
         {
             try
             {
 
-                var Photo = MediaPicker.CapturePhotoAsync();
+                var Photo = await MediaPicker.CapturePhotoAsync();
+                await LoadPhotoAsync(Photo);
             }
             catch(FeatureNotEnabledException fx)
             {
