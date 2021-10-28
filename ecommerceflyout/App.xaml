@@ -10,13 +10,16 @@
         <ResourceDictionary>
             <Color x:Key="Primary">#2196F3</Color>
             <Style TargetType="Button">
-                <Setter Property="TextColor" Value="White"></Setter>
+                <Setter Property="BackgroundColor" Value="Yellow"></Setter>
+                 <Setter Property="TextColor" Value="navy"></Setter>
+                <Setter Property="CornerRadius" Value="20"></Setter>
+                <Setter Property="WidthRequest" Value="300"></Setter>
                 <Setter Property="VisualStateManager.VisualStateGroups">
                     <VisualStateGroupList>
                         <VisualStateGroup x:Name="CommonStates">
                             <VisualState x:Name="Normal">
                                 <VisualState.Setters>
-                                    <Setter Property="BackgroundColor" Value="{StaticResource Primary}" />
+                                    <Setter Property="BackgroundColor" Value="yellow" />
                                 </VisualState.Setters>
                             </VisualState>
                             <VisualState x:Name="Disabled">
@@ -48,10 +51,10 @@
                                 <magic:GradientView VerticalOptions="FillAndExpand">
                                     <magic:GradientView.GradientSource>
                                         <magic:LinearGradient Angle="45">
-                                            <magic:GradientStop Color="navy" Offset="0" />
+                                            <magic:GradientStop Color="LightBlue" Offset="0" />
                                             <magic:GradientStop Color="CadetBlue" Offset="0.4" />
                                             <magic:GradientStop Color="DeepSkyBlue" Offset="0.8" />
-                                            <magic:GradientStop Color="Blue" Offset="1" />
+                                            <magic:GradientStop Color="LightCoral" Offset="1" />
                                         </magic:LinearGradient>
                                     </magic:GradientView.GradientSource>
                                 </magic:GradientView>

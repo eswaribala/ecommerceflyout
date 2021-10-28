@@ -15,7 +15,24 @@ namespace ecommerceflyout.Views
         public LoginPage()
         {
             InitializeComponent();
-            this.BindingContext = new LoginViewModel();
+            var vm = new MemberLoginViewModel();
+            this.BindingContext = vm;
+            vm.InValidLoginPrompt += () => DisplayAlert("Login Status", "Login Failed", "Dismiss");
+            vm.ValidLoginPrompt += () =>
+            {
+                Navigation.PushAsync(new ShopByCategory());
+            };
+
+
+            Email.Completed += (object sender, EventArgs e) =>
+            {
+                Password.Focus();
+            };
+
+            Password.Completed += (object sender, EventArgs e) =>
+            {
+                vm.SubmitCommand.Execute(null);
+            };
         }
     }
 }

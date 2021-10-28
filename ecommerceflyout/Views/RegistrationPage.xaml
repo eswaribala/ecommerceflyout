@@ -8,13 +8,15 @@
         <vm:RegistrationViewModel/>
     </ContentPage.BindingContext>
     <StackLayout>
+        <Image Source="dentalbanner.jpg" HorizontalOptions="Fill"></Image>
+        
         <Grid>
             <Grid.RowDefinitions>
                 <RowDefinition Height="*"></RowDefinition>
                 <RowDefinition Height="*"></RowDefinition>
                 <RowDefinition Height="*"></RowDefinition>
                 <RowDefinition Height="*"></RowDefinition>
-                <RowDefinition Height="*"></RowDefinition>
+                
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="100"/>
@@ -25,12 +27,18 @@
             <Label Text="Email" Grid.Row="1" Grid.Column="0"></Label>
             <Entry x:Name="Email"  Grid.Row="1" Grid.Column="1" Placeholder="sam@gmail.com"></Entry>
             <Label Text="MobileNo" Grid.Row="2" Grid.Column="0"></Label>
-            <Entry x:Name="Mobile"   Grid.Row="2" Grid.Column="1" Placeholder="99-999-9999"></Entry>
+            <Entry x:Name="MobileNo"   Grid.Row="2" Grid.Column="1" Placeholder="99-999-9999" Keyboard="Numeric"></Entry>
             <Label Text="DOB"  Grid.Row="3" Grid.Column="0"></Label>
             <DatePicker x:Name="DOB" Grid.Row="3" Grid.Column="1"></DatePicker>
             <Label Text="Password"   Grid.Row="4" Grid.Column="0"></Label>
             <Entry x:Name="Password"   Grid.Row="4" Grid.Column="1" IsPassword="True"></Entry>
-
+           
+            
         </Grid>
+        <StackLayout Padding="10">
+            <Button Text="Signup"  HorizontalOptions="CenterAndExpand" Padding="4" Margin="5" Clicked="SignUp_Button_Clicked" ></Button>
+            <Label Text="Already Signed? Go for Signin" HorizontalOptions="CenterAndExpand"  Margin="5"></Label>
+            <Button Text="SignIn" HorizontalOptions="CenterAndExpand"  Padding="4"  Margin="5"></Button>
+        </StackLayout>
     </StackLayout>
 </ContentPage>

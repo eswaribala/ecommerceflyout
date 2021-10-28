@@ -10,7 +10,7 @@ using Xamarin.Forms;
 
 namespace ecommerceflyout.ViewModels
 {
-    public class MemberLoginViewModel : INotifyPropertyChanged
+    public class MemberLoginViewModel : BaseViewModel,INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler PropertyChanged;
 
@@ -18,7 +18,7 @@ namespace ecommerceflyout.ViewModels
         public Action InValidLoginPrompt;
 
         private SQLiteConnection _SQLiteConnection;
-        private ICommand SubmitCommand { get; set; }
+        public ICommand SubmitCommand { get; set; }
 
         private string _Email;
         private string _Password;
@@ -43,13 +43,14 @@ namespace ecommerceflyout.ViewModels
             }
             set
             {
-                _Email = value;
+                _Password= value;
                 PropertyChanged(this, new PropertyChangedEventArgs("Password"));
             }
         }
 
         public MemberLoginViewModel()
         {
+            Title = "Customer Login";
             SubmitCommand = new Command(OnSubmit);
         }
 
