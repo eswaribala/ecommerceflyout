@@ -90,6 +90,10 @@
     <FlyoutItem Title="Programs and Features" Icon="icon_feed.png">
         <ShellContent Route="ProgramsandFeatures" ContentTemplate="{DataTemplate local:ProgramsandFeatures}" />
     </FlyoutItem>
+
+    <FlyoutItem Title="Network Check" Icon="icon_feed.png">
+        <ShellContent Route="NetworkPage" ContentTemplate="{DataTemplate local:NetworkPage}" />
+    </FlyoutItem>
     <FlyoutItem Title="Login" Icon="icon_feed.png">
         <ShellContent Route="LoginPage" ContentTemplate="{DataTemplate local:LoginPage}" />
     </FlyoutItem>
