@@ -10,11 +10,11 @@ using Xamarin.Forms.Xaml;
 namespace ecommerceflyout.Themes
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class Violet : ContentPage
+    public partial class Violet : ResourceDictionary
     {
         public Violet()
         {
-            InitializeComponent();
+           // InitializeComponent();
         }
     }
 }

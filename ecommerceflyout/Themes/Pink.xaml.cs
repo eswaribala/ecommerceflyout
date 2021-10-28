@@ -10,11 +10,11 @@ using Xamarin.Forms.Xaml;
 namespace ecommerceflyout.Themes
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class Pink : ContentPage
+    public partial class Pink : ResourceDictionary
     {
         public Pink()
         {
-            InitializeComponent();
+           // InitializeComponent();
         }
     }
 }
