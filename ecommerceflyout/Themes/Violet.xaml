@@ -2,23 +2,23 @@
 
     <ResourceDictionary xmlns="http://xamarin.com/schemas/2014/forms" 
                     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-                    x:Class="ThemingDemo.Themes.Pink">
+                    x:Class="ecommerceflyout.Themes.Pink">
         <!--Implicit Styles-->
         <Style TargetType="Label" BaseResourceKey="BodyStyle">
             <Setter Property="HorizontalOptions" Value="StartAndExpand" />
             <Setter Property="FontSize" Value="Medium" />
-            <Setter Property="TextColor" Value="#FF1493" />
+            <Setter Property="TextColor" Value="violet" />
         </Style>
         <Style TargetType="Entry">
             <Setter Property="HorizontalOptions" Value="Fill" />
             <Setter Property="VerticalOptions" Value="CenterAndExpand" />
-            <Setter Property="TextColor" Value="#FF1493" />
+            <Setter Property="TextColor" Value="violet" />
         </Style>
         <Style TargetType="Button">
             <Setter Property="HorizontalOptions" Value="Fill" />
             <Setter Property="VerticalOptions" Value="CenterAndExpand" />
             <Setter Property="BorderRadius" Value="15" />
-            <Setter Property="BackgroundColor" Value="#FF1493" />
+            <Setter Property="BackgroundColor" Value="violet" />
             <Setter Property="TextColor" Value="White" />
             <Setter Property="FontSize" Value="Medium" />
         </Style>
