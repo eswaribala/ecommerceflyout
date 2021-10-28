@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ecommerceflyout.Views.ShootPhotoPage"
+             xmlns:vm="clr-namespace:ecommerceflyout.ViewModels"
+             Title="{Binding Title}"
+             >
+    <ContentPage.BindingContext>
+        <vm:ShootPhotoViewModel></vm:ShootPhotoViewModel>
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="100"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Button Text="Take Photo" Grid.Row="0" Grid.Column="0" Margin="10" Pressed="PhotoClick_Pressed"></Button>
+            <Image Source="network.png" Grid.Row="1" Grid.Column="0"></Image>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

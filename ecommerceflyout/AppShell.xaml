@@ -94,6 +94,9 @@
     <FlyoutItem Title="Network Check" Icon="icon_feed.png">
         <ShellContent Route="NetworkPage" ContentTemplate="{DataTemplate local:NetworkPage}" />
     </FlyoutItem>
+    <FlyoutItem Title="Photo Picker" Icon="icon_feed.png">
+        <ShellContent Route="ShootPhotoPage" ContentTemplate="{DataTemplate local:ShootPhotoPage}" />
+    </FlyoutItem>
     <FlyoutItem Title="Login" Icon="icon_feed.png">
         <ShellContent Route="LoginPage" ContentTemplate="{DataTemplate local:LoginPage}" />
     </FlyoutItem>
