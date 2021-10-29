@@ -8,12 +8,13 @@
     </ContentPage.BindingContext>
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Get My Location"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+            <Label Text="Get My Location"/>
             <Button Text="Get My Location" BackgroundColor="Yellow" TextColor="Navy" Clicked="MyLocation_Clicked"/>
+            <FlexLayout>
             <Label x:Name="Longitude" Text="Longitude" TextColor="Yellow" FontSize="Medium" FontAttributes="Bold"> </Label>
             <Label x:Name="Latitude" Text="Latitude" TextColor="Yellow" FontSize="Medium" FontAttributes="Bold"></Label>
+            </FlexLayout>
+            <Button Text="Show Map" BackgroundColor="Yellow" TextColor="Navy" Clicked="Map_Clicked"></Button>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
