@@ -91,6 +91,9 @@
         <ShellContent Route="ProgramsandFeatures" ContentTemplate="{DataTemplate local:ProgramsandFeatures}" />
     </FlyoutItem>
 
+    <FlyoutItem Title="BarCode Reader" Icon="icon_feed.png">
+        <ShellContent Route="BarCodePage" ContentTemplate="{DataTemplate local:BarCodePage}" />
+    </FlyoutItem>
     <FlyoutItem Title="Network Check" Icon="icon_feed.png">
         <ShellContent Route="NetworkPage" ContentTemplate="{DataTemplate local:NetworkPage}" />
     </FlyoutItem>

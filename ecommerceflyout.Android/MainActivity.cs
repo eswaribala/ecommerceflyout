@@ -4,7 +4,7 @@ using Android.App;
 using Android.Content.PM;
 using Android.Runtime;
 using Android.OS;
-
+using ZXing;
 namespace ecommerceflyout.Droid
 {
     [Activity(Label = "ecommerceflyout", Icon = "@mipmap/icon", Theme = "@style/MainTheme", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation | ConfigChanges.UiMode | ConfigChanges.ScreenLayout | ConfigChanges.SmallestScreenSize )]
@@ -13,7 +13,7 @@ namespace ecommerceflyout.Droid
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
-
+            ZXing.Net.Mobile.Forms.Android.Platform.Init();
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
             LoadApplication(new App());
@@ -21,7 +21,7 @@ namespace ecommerceflyout.Droid
         public override void OnRequestPermissionsResult(int requestCode, string[] permissions, [GeneratedEnum] Android.Content.PM.Permission[] grantResults)
         {
             Xamarin.Essentials.Platform.OnRequestPermissionsResult(requestCode, permissions, grantResults);
-
+            ZXing.Net.Mobile.Forms.Android.Platform.Init();
             base.OnRequestPermissionsResult(requestCode, permissions, grantResults);
         }
     }
