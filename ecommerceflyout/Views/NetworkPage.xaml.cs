@@ -24,6 +24,8 @@ namespace ecommerceflyout.Views
 
             themePicker.SelectedIndexChanged += ThemePicker_SelectedIndexChanged;
 
+           
+
             CurrentAccess = Connectivity.NetworkAccess;
 
             Profiles = Connectivity.ConnectionProfiles;
