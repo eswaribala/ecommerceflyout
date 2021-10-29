@@ -14,7 +14,7 @@ namespace ecommerceflyout.Themes
     {
         public Pink()
         {
-           // InitializeComponent();
+            InitializeComponent();
         }
     }
 }

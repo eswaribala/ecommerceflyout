@@ -14,7 +14,7 @@ namespace ecommerceflyout.Themes
     {
         public Violet()
         {
-           // InitializeComponent();
+            InitializeComponent();
         }
     }
 }

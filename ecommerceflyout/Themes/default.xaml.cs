@@ -10,11 +10,11 @@ using Xamarin.Forms.Xaml;
 namespace ecommerceflyout.Themes
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class @default : ResourceDictionary
+    public partial class Default : ResourceDictionary
     {
-        public @default()
+        public Default()
         {
-            //InitializeComponent();
+            InitializeComponent();
         }
     }
 }

@@ -11,20 +11,24 @@
             <Image Source="network.png"/>
             <Label x:Name="NetworkType" Text="Network Type"></Label>
             <Label x:Name="NetworkTProfile" Text="Network Profile"></Label>
-            <StackLayout Orientation="Horizontal">
-                <Label Text="Theme: " VerticalOptions="Center" />
-                <Picker x:Name="themePicker" Title="Select a theme" HorizontalOptions="Start">
-                    <Picker.ItemsSource>
-                        <x:Array Type="{x:Type x:String}">
-                            <x:String>Default</x:String>
-                            <x:String>Pink</x:String>
-                            <x:String>Violet</x:String>
-                        </x:Array>
-                    </Picker.ItemsSource>
-                </Picker>
+            <StackLayout Style="{DynamicResource MainStackLayout}">
+                <Label Text="Login" Style="{DynamicResource LabelPageHeading}"/>
+                <Label Text="Welcome to Theming Demo" Style="{DynamicResource LabelSubHeading}"/>
+                
+                <Button Text="Forgot Password?" Style="{DynamicResource ButtonSecondary}"/>
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="Theme: " VerticalOptions="Center" />
+                    <Picker x:Name="themePicker" Title="Select a theme" HorizontalOptions="Start">
+                        <Picker.ItemsSource>
+                            <x:Array Type="{x:Type x:String}">
+                                <x:String>Default</x:String>
+                                <x:String>Pink</x:String>
+                                <x:String>Violet</x:String>
+                            </x:Array>
+                        </Picker.ItemsSource>
+                    </Picker>
+                </StackLayout>
             </StackLayout>
-
-
         </StackLayout>
         
     </ContentPage.Content>

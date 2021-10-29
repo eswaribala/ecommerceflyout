@@ -1,4 +1,5 @@
 ﻿using ecommerceflyout.Services;
+using ecommerceflyout.Themes;
 using ecommerceflyout.Views;
 using System;
 using Xamarin.Forms;
@@ -12,7 +13,7 @@ namespace ecommerceflyout
         public App()
         {
             InitializeComponent();
-
+         //   ThemeManager.ChangeTheme("Default");
             DependencyService.Register<MockDataStore>();
             MainPage = new AppShell();
         }
