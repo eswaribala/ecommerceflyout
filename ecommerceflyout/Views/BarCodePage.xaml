@@ -3,7 +3,8 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:vm="clr-namespace:ecommerceflyout.ViewModels"
              x:Class="ecommerceflyout.Views.BarCodePage"
-            xmlns:zxing="clr-namespace:ZXing.Net.Mobile.Forms;assembly=ZXing.Net.Mobile.Forms" xmlns:zxcm="clr-namespace:ZXing.Common;assembly=zxing.portable"
+            xmlns:zxing="clr-namespace:ZXing.Net.Mobile.Forms;assembly=ZXing.Net.Mobile.Forms" 
+             xmlns:zxcm="clr-namespace:ZXing.Common;assembly=zxing.portable"
              Title="{Binding Title}">
     <ContentPage.BindingContext>
         <vm:BarCodeViewModel></vm:BarCodeViewModel>
@@ -17,6 +18,7 @@
                     </zxing:ZXingBarcodeImageView.BarcodeOptions>
                 </zxing:ZXingBarcodeImageView>
                 <zxing:ZXingScannerView x:Name="BarcodeScanView" IsVisible="false" HeightRequest="200"  />
+               <!-- Service Set Identifier to identify wireless network for broadcast-->
                 <Label Text="SSID" HorizontalOptions="Center" VerticalOptions="Center" />
                 <Entry x:Name="Ssid" Text="" WidthRequest="200" HorizontalOptions="Center" VerticalOptions="Center" />
                 <StackLayout Orientation="Horizontal" HorizontalOptions="Center">

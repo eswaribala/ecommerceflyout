@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:ecommerceflyout.ViewModels"
+             x:Class="ecommerceflyout.Views.MyMapsPage" Title="{Binding Title}">
+    <ContentPage.BindingContext>
+        <vm:MyMapsViewModel></vm:MyMapsViewModel>
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="Get My Location"
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand" />
+            <Button Text="Get My Location" BackgroundColor="Yellow" TextColor="Navy" Clicked="MyLocation_Clicked"/>
+            <Label x:Name="Longitude" Text="Longitude" TextColor="Yellow" FontSize="Medium" FontAttributes="Bold"> </Label>
+            <Label x:Name="Latitude" Text="Latitude" TextColor="Yellow" FontSize="Medium" FontAttributes="Bold"></Label>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
